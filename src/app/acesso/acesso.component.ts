@@ -30,10 +30,15 @@ import {
         "criado",
         style({
           opacity: 1,
+        }), 
+      ),
+      state(
+        "erro",
+        style({
+          opacity: 1,
         })
       ),
-      transition("void => criado", [
-        style({ opacity: 0, transform: "translate(50px, 0)" }),
+      transition("criado => erro", [
         animate(
           "1.5s 0s ease-in-out",
           keyframes([
@@ -76,12 +81,18 @@ export class AcessoComponent implements OnInit {
 
   // Método de callback da animação
   public fimDaAnimacao(): void {
-    // console.log("Fim da animação");
+    this.estadoPainel = "criado";
   }
 
   public animarErroLogin(): void {
-    console.log("Aconteceu um erro de login!");
+    this.animarErro();
   }
 
-  public animarErroCadastro(): void {}
+  public animarErroCadastro(): void {
+    this.animarErro();
+  }
+
+  private animarErro(): void {
+    this.estadoPainel = "erro";
+  }
 }

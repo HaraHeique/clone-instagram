@@ -1,5 +1,5 @@
 import { ProgressoService } from './../../progresso.service';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import * as firebase from 'firebase';
 
@@ -22,7 +22,10 @@ export class IncluirPublicacaoComponent implements OnInit {
   @Output() public atualizarTimeLineEventEmitter: EventEmitter<any> = new EventEmitter<any>();
 
   public formulario: FormGroup = new FormGroup({
-    'titulo': new FormControl(null)
+    'titulo': new FormControl(null, [
+        Validators.required, 
+        Validators.minLength(1)
+    ])
   });
 
   constructor(

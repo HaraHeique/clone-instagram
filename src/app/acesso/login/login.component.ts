@@ -53,10 +53,13 @@ export class LoginComponent implements OnInit {
 
   private criarFormulario(): FormGroup {
     return new FormGroup({
-      email: new FormControl("", [Validators.required, Validators.email]),
+      email: new FormControl("", [
+        Validators.required, 
+        Validators.email
+      ]),
       senha: new FormControl("", [
         Validators.required,
-        Validators.minLength(6),
+        Validators.minLength(6)
       ]),
     });
   }
