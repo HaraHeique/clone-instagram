@@ -1,27 +1,49 @@
-<div class="row" *ngFor="let publicacao of publicacoes">
-  <div class="col d-flex justify-content-center">
-    <div class="card">
-      <div class="card-body">
-        <p class="card-text"><strong>{{ publicacao.nomeUsuario }}</strong></p>
-      </div>
+<ng-container
+  *ngIf="
+    publicacoes !== undefined && publicacoes.length > 0;
+    else semPublicacoes
+  "
+>
+  <div class="row" *ngFor="let publicacao of publicacoes">
+    <div class="col d-flex justify-content-center">
+      <div class="card">
+        <div class="card-body">
+          <p class="card-text">
+            <strong>{{ publicacao.nomeUsuario }}</strong>
+          </p>
+        </div>
 
-      <img class="card-img" [src]="publicacao.urlImagem || ''" />
-      
-      <div class="card-body">
-        <p class="card-text">
-          <strong>{{ publicacao.nomeUsuario }}</strong> {{ publicacao.titulo }}
-        </p>
+        <img class="card-img" [src]="publicacao.urlImagem || ''" />
 
-        <hr />
-        <input 
-          type="text" 
-          class="form-control comentario"
-          placeholder="Adicione um comentário..." 
-        />
+        <div class="card-body">
+          <p class="card-text">
+            <strong>{{ publicacao.nomeUsuario }}</strong>
+            {{ publicacao.titulo }}
+          </p>
+
+          <hr />
+          <input
+            type="text"
+            class="form-control comentario"
+            placeholder="Adicione um comentário..."
+          />
+        </div>
       </div>
     </div>
   </div>
-</div>
+</ng-container>
+<ng-template #semPublicacoes>
+  <div class="centered">
+    <div class="jumbotron">
+      <div class="container-fluid">
+        <h1 class="text-center font-weight-bold">Não há publicações</h1>
+        <p class="text-center lead">
+          Favor utilizar o botão de câmera para adicionar uma publicação.
+        </p>
+      </div>
+    </div>
+  </div>
+</ng-template>
 
 <!-- <div class="row">
   <div class="col d-flex justify-content-center">

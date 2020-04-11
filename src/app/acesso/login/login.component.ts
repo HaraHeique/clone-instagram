@@ -60,7 +60,7 @@ export class LoginComponent implements OnInit {
       senha: new FormControl("", [
         Validators.required,
         Validators.minLength(6)
-      ]),
+      ])
     });
   }
 }

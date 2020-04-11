@@ -24,18 +24,23 @@
           </button>
         </div>
         <div class="modal-body">
-          <input
-            type="file"
-            class="form-control"
-            accept="image/*"
-            (change)="preparaImagemUpload($event)"
-          />
-          <input
-            type="text"
-            placeholder="Título da publicação"
-            class="form-control"
-            formControlName="titulo"
-          />
+          <div class="form-group">
+            <input
+              type="file"
+              class="form-control"
+              accept="image/*"
+              (change)="preparaImagemUpload($event)"
+            />
+          </div>
+          <div class="form-group">
+            <input
+              type="text"
+              placeholder="Título da publicação"
+              class="form-control"
+              formControlName="titulo"
+            />
+            <small *ngIf="formularioInvalido" class="text-danger">Título e arquivo necessário</small>
+          </div>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">
@@ -61,34 +66,32 @@
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <div class="modal-body">
-          Progresso: {{ porcentagemUpload }}%
-        </div>
+        <div class="modal-body">Progresso: {{ porcentagemUpload }}%</div>
       </form>
     </div>
 
     <div class="modal-content" *ngIf="progressoPublicacao === 'concluido'">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">
-            Publicação realizada com sucesso
-          </h5>
-          <button
-            type="button"
-            class="close"
-            data-dismiss="modal"
-            aria-label="Close"
-          >
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          Sua publicação foi realizada com sucesso!
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">
-            Fechar
-          </button>
-        </div>
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">
+          Publicação realizada com sucesso
+        </h5>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Sua publicação foi realizada com sucesso!
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">
+          Fechar
+        </button>
+      </div>
     </div>
   </div>
 </div>

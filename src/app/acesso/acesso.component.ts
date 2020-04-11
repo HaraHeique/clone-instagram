@@ -57,6 +57,10 @@ import {
           ])
         ),
       ]),
+      transition("void => criado", [
+        style({ opacity: 0, transform: "translate(30px, 0)" }), // Alteração visuais
+        animate("500ms 0s ease-in-out"), // Duração, delay e aceleração(easing)
+      ]),
     ]),
   ],
 })

@@ -1,38 +1,40 @@
-<div class="container">
+<div class="container vertical-center">
   <div class="row">
     <div
-      class="col-sm-6 d-flex justify-content-end"
+      class="col-sm-0 col-md-6 d-flex justify-content-end banner"
       [@animacao-banner]="estadoBanner"
     >
       <app-banner></app-banner>
     </div>
 
-    <div *ngIf="cadastro; else formLogin">
-      <div
-        class="col-sm-6 d-flex justify-content-start"
-        [@animacao-painel]="estadoPainel"
-        (@animacao-painel.start)="inicioDaAnimacao()"
-        (@animacao-painel.done)="fimDaAnimacao()"
-      >
-        <app-cadastro
-          (exibirLogin)="exibirFormCadastro($event)"
-          (erroCadastro)="animarErroCadastro()"
+    <div class="centered-registro">
+      <div *ngIf="cadastro; else formLogin">
+        <div
+          class="col-sm-6 d-flex justify-content-start"
+          [@animacao-painel]="estadoPainel"
+          (@animacao-painel.start)="inicioDaAnimacao()"
+          (@animacao-painel.done)="fimDaAnimacao()"
         >
-        </app-cadastro>
+          <app-cadastro
+            (exibirLogin)="exibirFormCadastro($event)"
+            (erroCadastro)="animarErroCadastro()"
+          >
+          </app-cadastro>
+        </div>
       </div>
+      <ng-template #formLogin>
+        <div
+          class="col-sm-6 d-flex justify-content-start"
+          [@animacao-painel]="estadoPainel"
+          (@animacao-painel.start)="inicioDaAnimacao()"
+          (@animacao-painel.done)="fimDaAnimacao()"
+        >
+          <app-login
+            (exibirCadastro)="exibirFormCadastro($event)"
+            (erroLogin)="animarErroLogin()"
+          ></app-login>
+        </div>
+      </ng-template>
     </div>
-    <ng-template #formLogin>
-      <div
-        class="col-sm-6 d-flex justify-content-start"
-        [@animacao-painel]="estadoPainel"
-        (@animacao-painel.start)="inicioDaAnimacao()"
-        (@animacao-painel.done)="fimDaAnimacao()"
-      >
-        <app-login
-          (exibirCadastro)="exibirFormCadastro($event)"
-          (erroLogin)="animarErroLogin()"
-        ></app-login>
-      </div>
-    </ng-template>
   </div>
 </div>

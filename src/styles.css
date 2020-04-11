@@ -1,4 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
 body {
-    background-color: #FAFAFA !important;
+  background-color: #fafafa !important;
+}
+
+.centered {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
