@@ -3,7 +3,7 @@
 Um simples clone do Instagram voltado para plataforma web utilizando o framework [Angular](https://angular.io/) versão 9.
 
 <figure>
-    <img src="" alt="Instagram Clone" title="Homepage Instagram clone" />
+    <img src="https://github.com/HaraHeique/clone-instagram/blob/master/images/instragram-clone-homepage.png?raw=true" alt="Instagram Clone" title="Homepage Instagram clone" />
 </figure>
 
 ### Hospedagem
