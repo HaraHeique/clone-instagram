@@ -8,4 +8,4 @@ Um simples clone do Instagram voltado para plataforma web utilizando o framework
 
 ### Hospedagem
 
-Esta se encontra [hospedada](https://haraheique.github.io/clone-instagram/) no GitHub Pages. Entretanto, como dito anteriormente. Para checar o website basta clicar no link: https://haraheique.github.io/clone-passaro-urbano
+Esta se encontra [hospedada](https://haraheique.github.io/clone-instagram/) no GitHub Pages. Entretanto, como dito anteriormente. Para checar o website basta clicar no link: https://haraheique.github.io/clone-instagram

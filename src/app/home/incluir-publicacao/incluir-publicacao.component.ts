@@ -1,6 +1,6 @@
 import { ProgressoService } from "./../../progresso.service";
 import { FormGroup, FormControl, Validators } from "@angular/forms";
-import { Component, OnInit, Output, EventEmitter } from "@angular/core";
+import { Component, OnInit, Output, EventEmitter, ViewChild } from "@angular/core";
 import * as firebase from "firebase";
 
 import { BdService } from "./../../bd.service";
@@ -82,6 +82,9 @@ export class IncluirPublicacaoComponent implements OnInit {
           this.atualizarTimeLineEventEmitter.emit();
 
           continua.next(false);
+          setTimeout(() => {
+              this.progressoPublicacao = "pendente";
+          }, 1000);
         }
       });
   }
